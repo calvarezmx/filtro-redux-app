@@ -1,0 +1,12 @@
+<section class="todoapp">
+    <app-todo-add></app-todo-add>
+    <!-- This section should be hidden by default and shown when there are todos -->
+    <section class="main">
+        <input id="toggle-all" class="toggle-all" type="checkbox">
+        <label for="toggle-all" (click)="toggleAll()">Mark all as complete</label>
+        <app-todos-list></app-todos-list>
+    </section>
+
+    <app-todo-footer></app-todo-footer>
+
+</section>
