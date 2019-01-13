@@ -14,9 +14,10 @@ import { TodoFooterComponent } from './todo/todo-footer/todo-footer.component';
 import { StoreModule } from '@ngrx/store';
 // import { todoReducer } from './todo/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../../../02-redux-app/src/environments/environment';
 import { appReducers } from './app.reducers';
 import { FilterPipe } from './filter/filter.pipe';
+import { environment } from '../environments/environment'; // Angular CLI environemnt
+
 
 @NgModule({
   declarations: [
@@ -35,8 +36,8 @@ import { FilterPipe } from './filter/filter.pipe';
     // StoreModule.forRoot({ todos: todoReducer }),
     StoreModule.forRoot( appReducers ),
     StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: true// environment.production
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
     })
   ],
   providers: [],
